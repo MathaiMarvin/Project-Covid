@@ -9,9 +9,25 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
+    <nav class="navbar bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand nav-item text-light" id="home-link">COVID-19</a>
+
+            <ul class="navbar-nav me-auto d-flex flex-row">
+                <li class="nav-item">
+                    <a class="text-light nav-link" href="#" id="countries-link">COUNTRIES</a>
+                </li>
+            </ul>
+
+            <form class="d-flex" id="search-form">
+                <input class="form-control" type="text" placeholder="Search Country" id="search"/>
+                <button class="btn btn-outline-info ms-1" id="searchBtn">SEARCH</button>
+            </form>
+        </div>
+    </nav>
 
     <div class="container">
-        <h1 class="title text-center py-4">Glass Card</h1>
+        <h1 class="title text-center py-4">COVID-19 DATA</h1>
         <div class="row">
             <div class="col-md-6 d-flex justify-content-center">
 
@@ -19,17 +35,30 @@
                    
                     <div class="card-body">
 
-                        <span class="card-number">01</span>
+                        <span class="card-number fw-bold">World</span>
 
                       <h2 class="card-title mb-4">Card title</h2>
 
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="#" class="btn btn-outline-light">Go somewhere</a>
                     </div>
                   </div>
 
             </div>
             <div class="col-md-6 d-flex justify-content-center">
+
+                <div class="card m-2 cb2 text-center">
+                   
+                    <div class="card-body">
+
+                        <span class="card-number fw-bold">Country</span>
+
+                      <h2 class="card-title mb-4">Card title</h2>
+
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-outline-light">Go somewhere</a>
+                    </div>
+                  </div>
 
             </div>
         </div>
