@@ -19,10 +19,7 @@
                 </li>
             </ul>
 
-            <!-- <form class="d-flex" id="search-form">
-                <input class="form-control" type="text" placeholder="Search Country" id="search"/>
-                <button class="btn btn-outline-info ms-1" id="searchBtn">SEARCH</button>
-            </form> -->
+
         </div>
     </nav>
 
@@ -31,48 +28,51 @@
         <div class="row">
             <div class="col-md-6 d-flex justify-content-center">
 
-                <div class="card m-2 cb1 text-center" id="card-displayed">
+                <div class="card m-2 cb1 text-center" id="search-card-country">
                    
-                    <div class="card-body" id="world-card">
+                    <div class="card-body" id="search-div">
 
                         <span class="card-number fw-bold">World</span>
 
-                      <h2 class="card-title mb-4" id="title-card"></h2>
+                      <h2 class="card-title mb-4" id="search-title-card"></h2>
 
-                      <p class="card-text" id="world-data"></p>
-                      <!-- <a href="#" class="btn btn-outline-light">Go somewhere</a> -->
+                      <p class="card-text mt-3" id="search-text-card"></p>
+ 
+                        <form class="d-flex" role="search" id="search-form">
+                            <input class="form-control me-2" type="search" placeholder="Search Country" aria-label="Search" id="search">
+                            <button class="btn btn-outline-light" type="submit" id="search-btnn">Search</button>
+                        </form>
                     </div>
-                  </div>
+                </div>
 
             </div>
-            <div class="col-md-6 d-flex justify-content-center">
+            <div class="col-md-6 d-flex justify-content-center" id="done">
 
                 <div class="card m-2 cb2 text-center" id="card-country">
                    
-                    <div class="card m-2 cb2 text-center" id="search-card-country">
+                    
                         <div class="card-body" id="country-div">
 
-                            <div class="card-body" id="search-div">
+                            
                                 <span class="card-number fw-bold">Country</span>
     
                                     <h2 class="card-title mb-4" id="country-title-card"></h2>
-                                    <h2 class="card-title mb-4" id="search-title-card"></h2>
+                                
     
                                     <p class="card-text" id="country-text-card"></p>
-                                    <p class="card-text" id="search-text-card"></p>
-                                    <form class="d-flex" role="search" id="search-form">
-                                        <input class="form-control me-2" type="search" placeholder="Search Country" aria-label="Search" id="search">
-                                        <button class="btn btn-outline-light" type="submit" id="search-btnn">Search</button>
-                                    </form>
-                            </div>
+                                    
+                                    
+                            
                         
-                      </div>
-                    </div>
+                            
+                        </div>
 
+                    
+                </div>
             </div>
-        </div>
-    </div>
+          </div>  
 
+    </div>
 
     <script src="./js/bootstrap.js"></script>
     <script src="./js/index.js"></script>
