@@ -30,29 +30,29 @@ document.addEventListener('DOMContentLoaded', ()=>{
     //Creating the country data Element
     function countryDataElement(activeCases, countryText, lastUpdated, newCases, newDeaths, totalCases, totalDeaths, totalRecovered ){
         //Title of the card
-        countryTitleCard.innerText = countryText;
+        countryTitleCard.textContent = countryText;
 
         //Body Elements of the Card
         const countryCasesCovid = document.createElement('p')
-        countryCasesCovid.innerText = activeCases
+        countryCasesCovid.textContent = activeCases
 
         const countryLastUpdatedCovid = document.createElement('p')
-        countryLastUpdatedCovid.innerText = lastUpdated
+        countryLastUpdatedCovid.textContent = lastUpdated
 
         const countryNewCasesCovid = document.createElement('p')
-        countryNewCasesCovid.innerText = newCases
+        countryNewCasesCovid.textContent = newCases
 
         const countrynewDeathsCovid = document.createElement('p')
-        countrynewDeathsCovid.innerText = newDeaths
+        countrynewDeathsCovid.textContent = newDeaths
 
         const countryTotalCasesCovid = document.createElement('p')
-        countryTotalCasesCovid.innerText = totalCases
+        countryTotalCasesCovid.textContent = totalCases
 
         const countryTotalDeathsCovid = document.createElement('p')
-        countryTotalDeathsCovid.innerText = totalDeaths
+        countryTotalDeathsCovid.textContent = totalDeaths
 
         const countryTotalRecoveredCovid = document.createElement('p')
-        countryTotalRecoveredCovid.innerText = totalRecovered
+        countryTotalRecoveredCovid.textContent = totalRecovered
 
 
         //Appending the elements to the cardbody
@@ -124,29 +124,29 @@ document.addEventListener('DOMContentLoaded', ()=>{
     function searchDataElement (activeCases, countryText, lastUpdated, newCases, newDeaths, totalCases, totalDeaths, totalRecovered) {
 
         //Search Title
-        searchTitleCard.innerText = countryText
+        searchTitleCard.textContent = countryText
 
         //Body Elements of the Card
         const searchCountryCasesCovid = document.createElement('p')
-        searchCountryCasesCovid.innerText = activeCases
+        searchCountryCasesCovid.textContent = activeCases
 
         const searchCountryLastUpdatedCovid = document.createElement('p')
-        searchCountryLastUpdatedCovid.innerText = lastUpdated
+        searchCountryLastUpdatedCovid.textContent = lastUpdated
 
         const searchCountryNewCasesCovid = document.createElement('p')
-        searchCountryNewCasesCovid.innerText = newCases
+        searchCountryNewCasesCovid.textContent = newCases
 
         const searchCountrynewDeathsCovid = document.createElement('p')
-        searchCountrynewDeathsCovid.innerText = newDeaths
+        searchCountrynewDeathsCovid.textContent = newDeaths
 
         const searchCountryTotalCasesCovid = document.createElement('p')
-        searchCountryTotalCasesCovid.innerText = totalCases
+        searchCountryTotalCasesCovid.textContent = totalCases
 
         const searchCountryTotalDeathsCovid = document.createElement('p')
-        searchCountryTotalDeathsCovid.innerText = totalDeaths
+        searchCountryTotalDeathsCovid.textContent = totalDeaths
 
         const searchCountryTotalRecoveredCovid = document.createElement('p')
-        searchCountryTotalRecoveredCovid.innerText = totalRecovered
+        searchCountryTotalRecoveredCovid.textContent = totalRecovered
 
 
         //Appending the elements to the cardbody
@@ -173,7 +173,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const searchCountry=(Country_text) =>{
         // Clear the search results
         searchDisplayContent.innerHTML = '';
-                
+        
+        // const childToRemove = searchDisplayContent.lastElementChild;
+        // searchDisplayContent.removeChild(childToRemove)
 
         fetch(`${searchCovidDataUrL}${Country_text}`)
             .then(response=>response.json())
@@ -218,9 +220,59 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 
 
+    //Enabling Login Page
+    function loginPageEnabling(){
+        document.querySelector('body').innerHTML = 
+        `
+        <header>
+
+        <form id='login-form'>
+        <div class='field'>
+            <label>Email address</label>
+            <br>
+            <input id='email-details' type='text' placeholder='Enter Email'> <br>
+        
+        </div>
+        <div>
+            <label>Password</label> 
+            <br>
+            <input id='password-details' type='password' placeholder='Enter Password'> <br>
+        
+        </div>
+            <input id='submit-btn' type='submit' class='btn btn-outline-light' value='submit'/>
+        
+        </form>
+        
+        
+        
+        </header>
+        
+        `
+
+
+        document.getElementById('submit-btn').addEventListener('submit', ()=>{
+
+            let emailDetail = document.getElementById('email-details').value
+            let passwordDetail = document.getElementById('password-details').value
+
+            if(emailDetail !== "" && passwordDetail !==""){
+              
+                // Add "hidden" class to login form
+            document.getElementById('login-form').classList.add('hidden');
+
+            
+            }else if(emailDetail === "" || passwordDetail ===""){
+                alert('Email and Password Cannot be blank')
+            }
+
+        })
+    }
+
+
  
     countryCovidData()
     searchCountry()
+    loginPageEnabling()
 
 
 
