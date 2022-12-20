@@ -48,9 +48,9 @@ body{
 
 .card-number{
     color: rgba(225, 225, 225, 0.3);
-    font-size: 4rem;
+    font-size: 3.5rem;
     z-index: -1;
     position: absolute;
     top: -1rem;
-    right: 2.5rem;
+    right: 1.4rem; /**2.5  and font-size: 5**/
 }
