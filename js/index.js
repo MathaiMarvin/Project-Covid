@@ -221,52 +221,52 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
     //Enabling Login Page
-    function loginPageEnabling(){
-        document.querySelector('body').innerHTML = 
-        `
-        <header>
+    // function loginPageEnabling(){
+    //     document.querySelector('body').innerHTML = 
+    //     `
+    //     <header>
 
-        <form id='login-form'>
-        <div class='field'>
-            <label>Email address</label>
-            <br>
-            <input id='email-details' type='text' placeholder='Enter Email'> <br>
+    //     <form id='login-form'>
+    //     <div class='field'>
+    //         <label>Email address</label>
+    //         <br>
+    //         <input id='email-details' type='text' placeholder='Enter Email'> <br>
         
-        </div>
-        <div>
-            <label>Password</label> 
-            <br>
-            <input id='password-details' type='password' placeholder='Enter Password'> <br>
+    //     </div>
+    //     <div>
+    //         <label>Password</label> 
+    //         <br>
+    //         <input id='password-details' type='password' placeholder='Enter Password'> <br>
         
-        </div>
-            <input id='submit-btn' type='submit' class='btn btn-outline-light' value='submit'/>
+    //     </div>
+    //         <input id='submit-btn' type='submit' class='btn btn-outline-light' value='submit'/>
         
-        </form>
+    //     </form>
         
         
         
-        </header>
+    //     </header>
         
-        `
+    //     `
 
 
-        document.getElementById('submit-btn').addEventListener('submit', ()=>{
+    //     document.getElementById('submit-btn').addEventListener('submit', ()=>{
 
-            let emailDetail = document.getElementById('email-details').value
-            let passwordDetail = document.getElementById('password-details').value
+    //         let emailDetail = document.getElementById('email-details').value
+    //         let passwordDetail = document.getElementById('password-details').value
 
-            if(emailDetail !== "" && passwordDetail !==""){
+    //         if(emailDetail !== "" && passwordDetail !==""){
               
-                // Add "hidden" class to login form
-            document.getElementById('login-form').classList.add('hidden');
+    //             // Add "hidden" class to login form
+    //         document.getElementById('login-form').classList.add('hidden');
 
             
-            }else if(emailDetail === "" || passwordDetail ===""){
-                alert('Email and Password Cannot be blank')
-            }
+    //         }else if(emailDetail === "" || passwordDetail ===""){
+    //             alert('Email and Password Cannot be blank')
+    //         }
 
-        })
-    }
+    //     })
+    // }
 
 
  
