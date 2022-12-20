@@ -1,6 +1,7 @@
 // The URLS needed
 const searchCovidDataUrL = 'https://covid-19.dataflowkit.com/v1/';
 const covidDataUrL = 'https://covid-19.dataflowkit.com/v1/kenya';
+const allCountriesUrl = 'https://covid-19.dataflowkit.com/v1'
 
 //DOM CONTENT LOADED EVENT LISTENER
 
@@ -219,6 +220,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     }
 
+    //Loading the countries list
+    const loadCountries =()=>{
+        fetch(allCountriesUrl)
+            .then(res => res.json())
+            .then((data)=>{
+                const countriesResult = data.map(
+                    cases => countriesShowingElement(data['Country_text'])
+                )
+            })
+    }
+
 
     //Enabling Login Page
     // function loginPageEnabling(){
@@ -257,9 +269,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     //         if(emailDetail !== "" && passwordDetail !==""){
               
-    //             // Add "hidden" class to login form
-    //         document.getElementById('login-form').classList.add('hidden');
-
             
     //         }else if(emailDetail === "" || passwordDetail ===""){
     //             alert('Email and Password Cannot be blank')
