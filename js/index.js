@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const pCountryContent = document.getElementById('country-text-card');
     const countryDiv = document.getElementById('country-div');
     const cardCountryDisplay = document.getElementById('card-country');
+    const navDisplay = document.getElementById('nav-content');
+    const covidTitle = document.getElementById('covid-title');
 
 
     //Search form
@@ -233,49 +235,59 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
     //Enabling Login Page
-    // function loginPageEnabling(){
-    //     document.querySelector('body').innerHTML = 
-    //     `
-    //     <header>
+    function loginPageEnabling(){
+        document.querySelector('#login-display-content').innerHTML = 
+        `
+        <header id="head-now">
 
-    //     <form id='login-form'>
-    //     <div class='field'>
-    //         <label>Email address</label>
-    //         <br>
-    //         <input id='email-details' type='text' placeholder='Enter Email'> <br>
+        <form id='login-form'>
+        <div class='field'>
+            <label>Email address</label>
+            <br>
+            <input id='email-details' type='text' placeholder='Enter Email'> <br>
         
-    //     </div>
-    //     <div>
-    //         <label>Password</label> 
-    //         <br>
-    //         <input id='password-details' type='password' placeholder='Enter Password'> <br>
+        </div>
+        <div>
+            <label>Password</label> 
+            <br>
+            <input id='password-details' type='password' placeholder='Enter Password'> <br>
         
-    //     </div>
-    //         <input id='submit-btn' type='submit' class='btn btn-outline-light' value='submit'/>
+        </div>
+            <input id='submit-btn' type='submit' class='btn btn-outline-light' value='submit'/>
         
-    //     </form>
+        </form>
         
         
         
-    //     </header>
+        </header>
         
-    //     `
+        `
 
 
-    //     document.getElementById('submit-btn').addEventListener('submit', ()=>{
+        document.getElementById('submit-btn').addEventListener('click', ()=>{
 
-    //         let emailDetail = document.getElementById('email-details').value
-    //         let passwordDetail = document.getElementById('password-details').value
+            let formData = document.getElementById('login-form')
 
-    //         if(emailDetail !== "" && passwordDetail !==""){
-              
+            let emailDetail = document.getElementById('email-details').value
+            let passwordDetail = document.getElementById('password-details').value
+
+            if(emailDetail !== "" && passwordDetail !==""){
+              searchDisplayContent.removeAttribute('hidden')
+              searchDisplayContent.style.display= "center"
+              cardCountryDisplay.removeAttribute('hidden')
+              cardCountryDisplay.style.display= "center"
+              navDisplay.removeAttribute('hidden');
+              covidTitle.removeAttribute('hidden');
+                
+              document.getElementById('head-now').remove(formData);
             
-    //         }else if(emailDetail === "" || passwordDetail ===""){
-    //             alert('Email and Password Cannot be blank')
-    //         }
+            
+            }else if(emailDetail === "" || passwordDetail ===""){
+                alert('Email and Password Cannot be blank')
+            }
 
-    //     })
-    // }
+        })
+    }
 
 
  
