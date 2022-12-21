@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     //Links Data
     const countriesLink = document.getElementById('countries-link');
+    const homeLink = document.getElementById('home-link');
 
 
 
@@ -213,8 +214,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
         cardCountryDisplay.style.display ="none";
         searchDisplayContent.style.display = "none";
         countryListContent.removeAttribute('hidden');
+        countryListContent.style.display ="flex";
 
 
+
+    })
+
+
+    //Click event for Home Link
+    homeLink.addEventListener('click', ()=>{
+        countryListContent.style.display = "none";
+        //cardCountryDisplay.removeAttribute('hidden');
+        //searchDisplayContent.removeAttribute('hidden');
+        cardCountryDisplay.style.display = "flex";
+        //navDisplay.removeAttribute('hidden');
+        searchDisplayContent.style.display= "flex"
+        document.getElementById('head-now').style.display ="none"
 
     })
     //Create Countries Element
