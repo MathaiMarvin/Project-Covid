@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
               cardCountryDisplay.removeAttribute('hidden')
               cardCountryDisplay.style.display= "center"
               navDisplay.removeAttribute('hidden');
-              covidTitle.removeAttribute('hidden');
+              
                 
               document.getElementById('head-now').remove(formData);
             
