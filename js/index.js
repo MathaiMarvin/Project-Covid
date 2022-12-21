@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         `
         <header id="head-now">
 
-        <form id='login-form'>
+        <form id='login-form' class="">
         <div class='field'>
             <label>Email address</label>
             <br>
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             <input id='password-details' type='password' placeholder='Enter Password'> <br>
         
         </div>
-            <input id='submit-btn' type='submit' class='btn btn-outline-light' value='submit'/>
+            <input id='submit-btn' type='submit' class='btn btn-outline-light' value='Login'/>
         
         </form>
         
