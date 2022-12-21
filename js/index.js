@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const countryDiv = document.getElementById('country-div');
     const cardCountryDisplay = document.getElementById('card-country');
     const navDisplay = document.getElementById('nav-content');
-    const covidTitle = document.getElementById('covid-title');
+    const countryListContent = document.getElementById('countries-list-data');
 
 
     //Search form
@@ -212,12 +212,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         cardCountryDisplay.style.display ="none";
         searchDisplayContent.style.display = "none";
+        countryListContent.removeAttribute('hidden');
+
 
 
     })
     //Create Countries Element
-    const countriesShowingElement = () => {
+    const countriesShowingElement = (countries) => {
+        countries.forEach((element)=>{
+            const regionName = document.createElement('h4');
 
+            regionName.textContent = element['Country_text'];
+            countryListContent.appendChild(regionName)
+        })
 
 
     }
@@ -227,9 +234,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         fetch(allCountriesUrl)
             .then(res => res.json())
             .then((data)=>{
-                const countriesResult = data.map(
-                    cases => countriesShowingElement(data['Country_text'])
-                )
+                countriesShowingElement(data)
             })
     }
 
@@ -294,6 +299,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     countryCovidData()
     searchCountry()
     loginPageEnabling()
+    loadCountries()
 
 
 
