@@ -220,10 +220,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
     //Create Countries Element
     const countriesShowingElement = (countries) => {
         countries.forEach((element)=>{
-            const regionName = document.createElement('h4');
+           
 
-            regionName.textContent = element['Country_text'];
-            countryListContent.appendChild(regionName)
+            const rootDiv = document.createElement('div')
+            rootDiv.classList.add('col-3', 'p-1')
+
+            const spanData = document.createElement('span')
+            spanData.classList.add('col-12', 'badge', 'text-bg-light', 'p-2')
+
+            spanData.textContent = element['Country_text'];
+
+            rootDiv.appendChild(spanData)
+            countryListContent.appendChild(rootDiv)
         })
 
 
